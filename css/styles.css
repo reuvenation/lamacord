@@ -478,7 +478,7 @@ a { color: inherit; text-decoration: none; }
   display: grid; place-items: center;
 }
 .about__ic svg { width: 23px; height: 23px; }
-.about__card h3 { font-size: 1.05rem; font-weight: 600; letter-spacing: -.01em; line-height: 1.2; }
+.about__card h3 { font-size: 1.18rem; font-weight: 600; letter-spacing: -.01em; line-height: 1.2; }
 .about__card p { color: var(--ink-soft); font-size: 14px; line-height: 1.55; max-width: 26ch; }
 
 /* ---------------- Reviews ---------------- */
