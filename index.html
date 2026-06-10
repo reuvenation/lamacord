@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ламакорд — производство верёвки и каната оптом</title>
+  <meta name="description" content="Производим канатно-верёвочные изделия любой сложности и параметров. Полипропилен, полиамид, джут, шпагат оптом. Собственное производство с 1992 года, доставка по всей России.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="header" id="top">
+    <div class="container header__inner">
+      <a href="#top" class="logo" aria-label="Ламакорд">
+        <img class="logo__mark" src="assets/logo-mark.png" alt="" aria-hidden="true">
+        <span class="logo__word">ЛАМАКОРД</span>
+      </a>
+
+      <nav class="nav">
+        <a href="#products">Продукция</a>
+        <a href="#about">О нас</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+
+      <div class="header__right">
+        <a href="tel:+79933570366" class="header__phone">+7&nbsp;(993)&nbsp;357-03-66</a>
+        <a href="#lead" class="btn btn--dark btn--sm">Заказать звонок</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="container hero__grid">
+
+      <!-- Левая колонна: текст (вылетает слева) -->
+      <div class="hero__text">
+        <h1 class="hero__title">
+          <span class="line"><span class="fly" style="--i:0">Верёвка <span class="accent">оптом</span></span></span>
+          <span class="line"><span class="fly" style="--i:1">от производителя</span></span>
+        </h1>
+        <img class="hero__ropes" src="assets/ropes-cut.png"
+             alt="Бухты и мотки верёвки: полипропилен, джут, полиамид" loading="eager">
+
+        <div class="hero__features fly" style="--i:2">
+          <div class="feat">
+            <span class="feat__ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M3 21h18M4 21V10l6 4V10l6 4V6l4 2v13" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+            </span>
+            <span>Собственное<br>производство</span>
+          </div>
+          <div class="feat">
+            <span class="feat__ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.4" stroke="currentColor" stroke-width="1.7"/><path d="M12 7.4V12l3.2 1.9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <span>Сроки изготовления<br>от&nbsp;3&nbsp;дней</span>
+          </div>
+          <div class="feat">
+            <span class="feat__ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M2 6h11v9H2zM13 9h4l4 3v3h-8z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="6.5" cy="17.5" r="1.9" stroke="currentColor" stroke-width="1.7"/><circle cx="17" cy="17.5" r="1.9" stroke="currentColor" stroke-width="1.7"/></svg>
+            </span>
+            <span>Доставка<br>по&nbsp;РФ</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Правая колонна: форма заявки -->
+      <div class="hero__form-col">
+        <form class="lead" id="lead" novalidate>
+          <div class="lead__head">
+            <h2 class="lead__title">Получить оптовый прайс-лист</h2>
+            <div class="lead__promo">
+              <span class="lead__promo-tag">Акция</span>
+              <span>Успейте получить <b>бесплатные образцы</b></span>
+            </div>
+            <p class="lead__sub">До&nbsp;конца акции осталось:</p>
+          </div>
+
+          <!-- Механический флип-таймер -->
+          <div class="timer" id="timer" role="timer" aria-label="До конца акции">
+            <div class="timer__group">
+              <div class="flip" data-unit="h"></div>
+              <span class="timer__cap">часы</span>
+            </div>
+            <span class="timer__colon">:</span>
+            <div class="timer__group">
+              <div class="flip" data-unit="m"></div>
+              <span class="timer__cap">минуты</span>
+            </div>
+            <span class="timer__colon">:</span>
+            <div class="timer__group">
+              <div class="flip" data-unit="s"></div>
+              <span class="timer__cap">секунды</span>
+            </div>
+          </div>
+
+          <div class="lead__fields">
+            <input class="input" type="text" name="name" placeholder="Ваше имя" autocomplete="name" required>
+            <input class="input" type="tel" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel" required>
+            <button class="btn btn--dark btn--block" type="submit">
+              <span>Отправить заявку</span>
+              <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </button>
+          </div>
+
+          <p class="lead__note">Нажимая кнопку, вы соглашаетесь с политикой обработки персональных данных.</p>
+          <div class="lead__ok" hidden>
+            <span class="lead__ok-ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.3 4.3L19 7" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <h3>Спасибо за&nbsp;заявку!</h3>
+            <p>Мы&nbsp;получили вашу заявку. Наш менеджер свяжется с&nbsp;вами в&nbsp;ближайшее время.</p>
+            <a href="tel:+79933570366" class="lead__ok-phone">+7&nbsp;(993)&nbsp;357-03-66</a>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================== PRODUCTS ===================== -->
+  <section class="section" id="products">
+    <div class="container">
+      <div class="section__head section__head--center reveal">
+        <h2 class="section__title">Наша продукция</h2>
+      </div>
+
+      <div class="grid">
+        <article class="card reveal" style="--d:0">
+          <img class="card__pic" src="assets/card1.png" alt="Полипропиленовая плетёная" loading="lazy">
+          <span class="card__name">Полипропиленовая плетёная</span>
+        </article>
+
+        <article class="card reveal" style="--d:1">
+          <img class="card__pic" src="assets/card2.png" alt="Полипропиленовая вязаная" loading="lazy">
+          <span class="card__name">Полипропиленовая вязаная</span>
+        </article>
+
+        <article class="card reveal" style="--d:2">
+          <img class="card__pic" src="assets/card3.png" alt="Канат джутовый" loading="lazy">
+          <span class="card__name">Канат джутовый</span>
+        </article>
+
+        <article class="card reveal" style="--d:3">
+          <img class="card__pic" src="assets/card4.png" alt="Полиамидная плетёная" loading="lazy">
+          <span class="card__name">Полиамидная плетёная</span>
+        </article>
+
+        <article class="card reveal" style="--d:4">
+          <img class="card__pic" src="assets/card5.png" alt="Нить полипропиленовая" loading="lazy">
+          <span class="card__name">Нить полипропиленовая</span>
+        </article>
+
+        <article class="card reveal" style="--d:5">
+          <img class="card__pic" src="assets/card6.png" alt="Шнур эспандерный" loading="lazy">
+          <span class="card__name">Шнур эспандерный</span>
+        </article>
+
+        <article class="card reveal" style="--d:6">
+          <img class="card__pic" src="assets/card7.png" alt="Репшнур" loading="lazy">
+          <span class="card__name">Репшнур</span>
+        </article>
+
+        <article class="card reveal" style="--d:7">
+          <img class="card__pic" src="assets/card8.png" alt="Шпагат полипропиленовый" loading="lazy">
+          <span class="card__name">Шпагат полипропиленовый</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== ABOUT ===================== -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section__head section__head--center reveal">
+        <h2 class="section__title">О нас</h2>
+      </div>
+      <div class="about">
+        <div class="about__card reveal" style="--d:0">
+          <div class="about__head">
+            <span class="about__ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M4 7h9M17 7h3M4 12h3M11 12h9M4 17h7M15 17h5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="15" cy="7" r="2.1" stroke="currentColor" stroke-width="1.7"/><circle cx="9" cy="12" r="2.1" stroke="currentColor" stroke-width="1.7"/><circle cx="13" cy="17" r="2.1" stroke="currentColor" stroke-width="1.7"/></svg>
+            </span>
+            <h3>Производство под задачу</h3>
+          </div>
+          <p>Изготовим под ваше&nbsp;ТЗ: материал, диаметр, цвет, разрывная нагрузка и&nbsp;намотка.</p>
+        </div>
+        <div class="about__card reveal" style="--d:1">
+          <div class="about__head">
+            <span class="about__ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M3 21V8l9-4 9 4v13" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M7 21v-6h4v6M13 21v-4h5v4" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+            </span>
+            <h3>Всегда в&nbsp;наличии</h3>
+          </div>
+          <p>Ходовые позиции держим на&nbsp;собственном складе&nbsp;— отгружаем сразу, без ожидания производства.</p>
+        </div>
+        <div class="about__card reveal" style="--d:2">
+          <div class="about__head">
+            <span class="about__ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M12 3l7 3v5c0 4.6-3 7.7-7 9-4-1.3-7-4.4-7-9V6l7-3z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            <h3>Гарантия качества</h3>
+          </div>
+          <p>Контролируем каждую партию&nbsp;— стабильное качество от&nbsp;заказа к&nbsp;заказу.</p>
+        </div>
+        <div class="about__card reveal" style="--d:3">
+          <div class="about__head">
+            <span class="about__ic" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none"><path d="M6 3h8l4 4v14H6z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M14 3v4h4" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9 13h6M9 16.5h6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+            </span>
+            <h3>Работаем по&nbsp;договору</h3>
+          </div>
+          <p>Полный пакет документов, работа по&nbsp;договору и&nbsp;с&nbsp;НДС&nbsp;— удобно для юрлиц и&nbsp;бухгалтерии.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer" id="contacts">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <span class="logo logo--light">
+          <img class="logo__mark" src="assets/logo-mark.png" alt="" aria-hidden="true">
+          <span class="logo__word">ЛАМАКОРД</span>
+        </span>
+        <p>Производство канатно-верёвочных изделий с&nbsp;1992&nbsp;года. Опт и&nbsp;поставки по&nbsp;всей&nbsp;России.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Продукция</h4>
+        <a href="#products">Полипропилен плетёный</a>
+        <a href="#products">Полипропилен вязаный</a>
+        <a href="#products">Канат джутовый</a>
+        <a href="#products">Шпагат и&nbsp;шнуры</a>
+      </div>
+      <div class="footer__col">
+        <h4>Контакты</h4>
+        <a href="tel:+79933570366">+7 (993) 357-03-66</a>
+        <a href="mailto:info@lamacord.ru">info@lamacord.ru</a>
+        <span>г. Волоколамск, Московская обл.</span>
+        <a href="#lead" class="btn btn--dark btn--sm footer__cta">Получить прайс-лист</a>
+      </div>
+    </div>
+    <div class="container footer__bottom">
+      <span>© 2026 Ламакорд</span>
+      <a href="#">Политика конфиденциальности</a>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
