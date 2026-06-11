@@ -116,6 +116,7 @@ a { color: inherit; text-decoration: none; }
   display: block;
 }
 .logo__word { line-height: 1; }
+.logo__img { height: 30px; width: auto; display: block; }
 
 .nav { display: flex; gap: 30px; }
 .nav a {
@@ -633,6 +634,7 @@ a { color: inherit; text-decoration: none; }
   .container { padding-inline: 18px; }
   .header__phone { display: none; }
   .header__inner { height: 66px; }
+  .logo__img { height: 25px; }
   .hero__title { white-space: normal; font-size: clamp(2.1rem, 9vw, 2.8rem); }
   .hero__features { gap: 20px; }
   .card { width: calc((100% - 18px) / 2); height: 190px; }
