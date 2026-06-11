@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /spasibo/
+
+Sitemap: https://lama-cord.ru/sitemap.xml
