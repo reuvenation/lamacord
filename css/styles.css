@@ -111,12 +111,11 @@ a { color: inherit; text-decoration: none; }
   font-size: 18px;
 }
 .logo__mark {
-  height: 56px;
+  height: 42px;
   width: auto;
   display: block;
 }
 .logo__word { line-height: 1; }
-.logo__img { height: 58px; width: auto; display: block; }
 
 .nav { display: flex; gap: 30px; }
 .nav a {
@@ -569,7 +568,7 @@ a { color: inherit; text-decoration: none; }
   padding-bottom: 44px;
 }
 .logo--light { font-size: 17px; }
-.logo--light .logo__img { height: 64px; }
+.logo--light .logo__mark { height: 46px; }
 .logo--light .logo__mark { color: var(--accent); }
 .footer__brand p { color: var(--ink-soft); font-size: 14.5px; margin-top: 16px; max-width: 32em; line-height: 1.55; }
 .footer__col h4 { font-size: 13px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink-soft); margin-bottom: 16px; }
@@ -635,7 +634,7 @@ a { color: inherit; text-decoration: none; }
   .container { padding-inline: 18px; }
   .header__phone { display: none; }
   .header__inner { height: 66px; }
-  .logo__img { height: 46px; }
+  .logo__mark { height: 36px; }
   .hero__title { white-space: normal; font-size: clamp(2.1rem, 9vw, 2.8rem); }
   .hero__features { gap: 20px; }
   .card { width: calc((100% - 18px) / 2); height: 190px; }
