@@ -635,7 +635,8 @@ a { color: inherit; text-decoration: none; }
   .card { width: calc((100% - 18px) / 2); height: 190px; }
   .review { flex-basis: 86%; }
   .about { grid-template-columns: 1fr; }
-  .footer__grid { grid-template-columns: 1fr; }
+  .footer__grid { grid-template-columns: 1fr 1fr; gap: 24px 20px; padding-bottom: 32px; }
+  .footer__col h4 { margin-bottom: 12px; }
   .cta__inner { padding: 38px 28px; }
   .section { padding: 70px 0; }
   .lead { padding: 24px 20px 22px; }
