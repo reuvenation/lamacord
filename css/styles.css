@@ -652,6 +652,7 @@ a { color: inherit; text-decoration: none; }
   }
   .feat {
     flex: 1 1 0;
+    min-width: 0;           /* колонки могут ужиматься → всегда один ряд */
     flex-direction: column;
     align-items: center;
     text-align: center;
