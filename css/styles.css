@@ -192,7 +192,6 @@ a { color: inherit; text-decoration: none; }
   color: var(--ink);
 }
 .feat__ic svg { width: 23px; height: 23px; }
-.feat-extra { display: none; }   /* «в Подмосковье» — только на мобиле */
 
 /* фото мотков верёвки — выезжает снизу-слева */
 .hero__ropes {
@@ -642,25 +641,26 @@ a { color: inherit; text-decoration: none; }
   .hero__title { white-space: normal; font-size: clamp(2.1rem, 9vw, 2.8rem); margin-bottom: 4px; }
   /* фото мотков — полноразмерное (как раньше), не уменьшаем */
   .hero__ropes { width: 100%; max-width: 100%; max-height: none; margin: 6px auto 0; }
-  /* плашки: «Изготовление» + «Доставка» в верхнем ряду (слева/справа),
-     «Собственное производство в Подмосковье» — по центру ниже */
+  /* три преимущества — в ОДНУ строку: иконка сверху, текст под ней */
   .hero__features {
     flex-direction: row;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     justify-content: center;
     align-items: flex-start;
-    column-gap: 34px;
-    row-gap: 14px;
-    margin-top: 14px;
+    gap: 10px;
+    margin-top: 16px;
   }
-  .feat { font-size: 13.5px; gap: 10px; line-height: 1.18; text-align: left; }
-  .feat__ic { width: 36px; height: 36px; }
-  .feat__ic svg { width: 18px; height: 18px; }
-  .feat-extra { display: inline; }
-  /* порядок: пара сверху, «Собственное производство» — отдельной строкой по центру */
-  .hero__features .feat:nth-child(1) { order: 3; flex-basis: 100%; justify-content: center; }
-  .hero__features .feat:nth-child(2) { order: 1; }
-  .hero__features .feat:nth-child(3) { order: 2; }
+  .feat {
+    flex: 1 1 0;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 7px;
+    font-size: 12.5px;
+    line-height: 1.2;
+  }
+  .feat__ic { width: 38px; height: 38px; }
+  .feat__ic svg { width: 19px; height: 19px; }
   .card { width: calc((100% - 18px) / 2); height: 190px; }
   .review { flex-basis: 86%; }
   .about { grid-template-columns: 1fr; }
