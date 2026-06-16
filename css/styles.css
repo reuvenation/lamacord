@@ -273,6 +273,20 @@ a { color: inherit; text-decoration: none; }
 .input::placeholder { color: #a9a59a; }
 .input:focus { outline: none; background: #fff; border-color: var(--accent); }
 
+/* обязательные поля: подсветка ошибки */
+.field { display: flex; flex-direction: column; align-items: stretch; }
+.field__err {
+  display: none;
+  color: #d6433b;
+  font-size: 13px;
+  font-weight: 500;
+  margin-top: 7px;
+  padding-left: 4px;
+  text-align: left;
+}
+.field.is-invalid .input { border-color: #d6433b; background: #fff; }
+.field.is-invalid .field__err { display: block; }
+
 .lead__note { font-size: 11.5px; color: #a9a59a; text-align: center; margin-top: 14px; line-height: 1.4; }
 .lead__ok {
   text-align: center;
@@ -649,7 +663,8 @@ a { color: inherit; text-decoration: none; }
     align-items: flex-start;
     gap: 6px;
     margin-top: 16px;
-    padding: 0 6px;                   /* лёгкий отступ, чтобы крайние не липли к краю */
+    margin-left: -10px;               /* выходим за паддинг контейнера → крайние ближе к краям */
+    margin-right: -10px;
   }
   .feat {
     flex: 0 1 auto;

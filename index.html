@@ -176,8 +176,14 @@
           </div>
 
           <div class="lead__fields">
-            <input class="input" type="text" name="name" placeholder="Ваше имя" autocomplete="name" required>
-            <input class="input" type="tel" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel" required>
+            <div class="field">
+              <input class="input" type="text" name="name" placeholder="Ваше имя" autocomplete="name" required>
+              <span class="field__err">Введите ваше имя</span>
+            </div>
+            <div class="field">
+              <input class="input" type="tel" name="phone" placeholder="+7 (___) ___-__-__" autocomplete="tel" required>
+              <span class="field__err">Введите номер телефона полностью</span>
+            </div>
             <button class="btn btn--dark btn--block" type="submit">
               <span>Отправить заявку</span>
               <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>

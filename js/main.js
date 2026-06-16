@@ -122,6 +122,12 @@ const SUPABASE_URL = 'https://isjbpafvwwhjchmsadpp.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlzamJwYWZ2d3doamNobXNhZHBwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODExMDE4OTUsImV4cCI6MjA5NjY3Nzg5NX0.jKpnSQx8WI0s04o4xV3arzzBpPNpTH6gqmvLvq822PM';
 const form = document.getElementById('lead');
 if (form) {
+  const nameWrap = form.name.closest('.field');
+  const phoneWrap = form.phone.closest('.field');
+  // как только пользователь правит поле — убираем подсветку ошибки
+  form.name.addEventListener('input', () => nameWrap && nameWrap.classList.remove('is-invalid'));
+  form.phone.addEventListener('input', () => phoneWrap && phoneWrap.classList.remove('is-invalid'));
+
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const name = form.name.value.trim();
@@ -129,9 +135,14 @@ if (form) {
     const digits = phone.replace(/\D/g, '');
     const btn = form.querySelector('button[type="submit"]');
 
-    if (digits.length < 11) {
-      phoneInput.focus();
-      phoneInput.style.borderColor = 'var(--accent)';
+    // Проверка обязательных полей: подсвечиваем красным + текст ошибки
+    let ok = true;
+    if (!name) { nameWrap.classList.add('is-invalid'); ok = false; }
+    else { nameWrap.classList.remove('is-invalid'); }
+    if (digits.length < 11) { phoneWrap.classList.add('is-invalid'); ok = false; }
+    else { phoneWrap.classList.remove('is-invalid'); }
+    if (!ok) {
+      (!name ? form.name : form.phone).focus();
       return;
     }
 
