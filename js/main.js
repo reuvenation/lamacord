@@ -120,6 +120,38 @@ if (phoneInput) {
 /* ---------- Supabase: приём заявок ---------- */
 const SUPABASE_URL = 'https://isjbpafvwwhjchmsadpp.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlzamJwYWZ2d3doamNobXNhZHBwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODExMDE4OTUsImV4cCI6MjA5NjY3Nzg5NX0.jKpnSQx8WI0s04o4xV3arzzBpPNpTH6gqmvLvq822PM';
+
+/* Источник заявки: ловим UTM-метки из URL (Яндекс.Директ) при заходе и держим в
+   sessionStorage, чтобы они дожили до отправки формы. На отправке упаковываем их
+   в поле source → менеджер видит источник/запрос прямо в Telegram-уведомлении. */
+(function captureAttribution() {
+  try {
+    const p = new URLSearchParams(window.location.search);
+    const keys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+    if (keys.some((k) => p.get(k))) {
+      const attr = {};
+      keys.forEach((k) => { if (p.get(k)) attr[k] = p.get(k); });
+      sessionStorage.setItem('lead_attr', JSON.stringify(attr));
+    }
+  } catch (_) {}
+})();
+
+function buildLeadSource() {
+  let src = 'hero';
+  try {
+    const a = JSON.parse(sessionStorage.getItem('lead_attr') || 'null');
+    if (a) {
+      const parts = [];
+      const sm = [a.utm_source, a.utm_medium].filter(Boolean).join('/');
+      if (sm) parts.push(sm);
+      if (a.utm_term) parts.push('запрос: ' + a.utm_term);
+      if (a.utm_campaign) parts.push('кампания: ' + a.utm_campaign);
+      if (parts.length) src = 'hero · ' + parts.join(' · ');
+    }
+  } catch (_) {}
+  return src.slice(0, 250);
+}
+
 const form = document.getElementById('lead');
 if (form) {
   const nameWrap = form.name.closest('.field');
@@ -165,7 +197,7 @@ if (form) {
         body: JSON.stringify({
           name,
           phone: phone.replace(/[^\d+]/g, ''),
-          source: 'hero',
+          source: buildLeadSource(),
           user_agent: navigator.userAgent.slice(0, 300)
         })
       });
