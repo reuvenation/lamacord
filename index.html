@@ -62,6 +62,9 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- прогрев соединения с Supabase: TLS-хендшейк заранее → быстрая отправка заявки -->
+  <link rel="preconnect" href="https://isjbpafvwwhjchmsadpp.supabase.co" crossorigin>
+  <link rel="dns-prefetch" href="https://isjbpafvwwhjchmsadpp.supabase.co">
   <link href="https://fonts.googleapis.com/css2?family=Onest:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="icon" href="/favicon.ico?v=2" sizes="any">
@@ -125,19 +128,19 @@
             <span class="feat__ic" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none"><path d="M3 21h18M4 21V10l6 4V10l6 4V6l4 2v13" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
             </span>
-            <span>Собственное<br>производство</span>
+            <span>Собственное<br> производство</span>
           </div>
           <div class="feat">
             <span class="feat__ic" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.4" stroke="currentColor" stroke-width="1.7"/><path d="M12 7.4V12l3.2 1.9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </span>
-            <span>Сроки изготовления<br>от&nbsp;3&nbsp;дней</span>
+            <span>Изготовление<br> от&nbsp;3&nbsp;дней</span>
           </div>
           <div class="feat">
             <span class="feat__ic" aria-hidden="true">
               <svg viewBox="0 0 24 24" fill="none"><path d="M2 6h11v9H2zM13 9h4l4 3v3h-8z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="6.5" cy="17.5" r="1.9" stroke="currentColor" stroke-width="1.7"/><circle cx="17" cy="17.5" r="1.9" stroke="currentColor" stroke-width="1.7"/></svg>
             </span>
-            <span>Доставка<br>по&nbsp;РФ</span>
+            <span>Доставка<br> по&nbsp;РФ</span>
           </div>
         </div>
       </div>
@@ -332,7 +335,6 @@
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="js/main.js"></script>
 </body>
 </html>

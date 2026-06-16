@@ -120,10 +120,6 @@ if (phoneInput) {
 /* ---------- Supabase: приём заявок ---------- */
 const SUPABASE_URL = 'https://isjbpafvwwhjchmsadpp.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlzamJwYWZ2d3doamNobXNhZHBwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODExMDE4OTUsImV4cCI6MjA5NjY3Nzg5NX0.jKpnSQx8WI0s04o4xV3arzzBpPNpTH6gqmvLvq822PM';
-const sb = (window.supabase && window.supabase.createClient)
-  ? window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY)
-  : null;
-
 const form = document.getElementById('lead');
 if (form) {
   form.addEventListener('submit', async (e) => {
@@ -145,14 +141,24 @@ if (form) {
     label.textContent = 'Отправляем…';
 
     try {
-      if (!sb) throw new Error('supabase not loaded');
-      const { error } = await sb.from('leads').insert({
-        name,
-        phone: phone.replace(/[^\d+]/g, ''),
-        source: 'hero',
-        user_agent: navigator.userAgent.slice(0, 300)
+      // Прямой POST в PostgREST (без тяжёлого SDK). Prefer:return=minimal —
+      // сервер не возвращает тело строки → ответ быстрее.
+      const res = await fetch(`${SUPABASE_URL}/rest/v1/leads`, {
+        method: 'POST',
+        headers: {
+          'apikey': SUPABASE_ANON_KEY,
+          'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+          'Content-Type': 'application/json',
+          'Prefer': 'return=minimal'
+        },
+        body: JSON.stringify({
+          name,
+          phone: phone.replace(/[^\d+]/g, ''),
+          source: 'hero',
+          user_agent: navigator.userAgent.slice(0, 300)
+        })
       });
-      if (error) throw error;
+      if (!res.ok) throw new Error('HTTP ' + res.status);
 
       // успех → отдельная страница-«спасибо» (URL-цель для Яндекс.Метрики/Директа)
       window.location.assign('spasibo/');

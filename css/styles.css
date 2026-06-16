@@ -634,8 +634,19 @@ a { color: inherit; text-decoration: none; }
   .header__phone { display: none; }
   .header__inner { height: 66px; }
   .logo__mark { height: 46px; }
-  .hero__title { white-space: normal; font-size: clamp(2.1rem, 9vw, 2.8rem); }
-  .hero__features { gap: 20px; }
+  /* --- Герой на телефоне: всё по центру, форма повыше --- */
+  .hero { padding-top: 18px; }
+  .hero__grid { gap: 16px; }
+  .hero__text { align-items: center; text-align: center; }
+  .hero__title { white-space: normal; font-size: clamp(2.1rem, 9vw, 2.8rem); margin-bottom: 4px; }
+  /* фото мотков — компактнее, по центру, чтобы не отжимать форму вниз */
+  .hero__ropes { width: auto; max-width: 80%; max-height: 140px; margin: 4px auto 0; }
+  /* три плашки — каждая в одну строку, ярлыки мельче, столбиком по центру */
+  .hero__features { flex-direction: column; align-items: center; gap: 9px; margin-top: 14px; }
+  .feat { font-size: 13.5px; gap: 10px; line-height: 1.15; }
+  .feat br { display: none; }
+  .feat__ic { width: 36px; height: 36px; }
+  .feat__ic svg { width: 18px; height: 18px; }
   .card { width: calc((100% - 18px) / 2); height: 190px; }
   .review { flex-basis: 86%; }
   .about { grid-template-columns: 1fr; }
