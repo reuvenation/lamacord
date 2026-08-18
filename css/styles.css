@@ -262,6 +262,7 @@ a { color: inherit; text-decoration: none; }
 .lead__min {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 9px;
   margin-top: 20px;
   padding: 11px 14px;
@@ -269,9 +270,9 @@ a { color: inherit; text-decoration: none; }
   border: 1px solid rgba(110,112,69,.22);
   border-radius: 13px;
   font-size: 13.5px;
-  line-height: 1.35;
+  line-height: 1.45;
   color: var(--ink-soft);
-  text-align: left;
+  text-align: center;
 }
 .lead__min svg { width: 19px; height: 19px; flex: none; color: var(--accent); }
 .lead__min b { color: var(--ink); font-weight: 700; white-space: nowrap; }
